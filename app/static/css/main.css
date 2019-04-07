@@ -1,0 +1,33 @@
+
+.icons-navbar{     
+    display: flex;
+    flex-direction: row;
+    
+    list-style-type: none;
+    
+}
+
+.icons-navbar li{
+    margin-left: 10px;
+    margin-right: 10px;
+      
+}
+.icons-navbar li a img{
+    width: 30px;
+    height: 30px;  
+}
+.principal-container{
+    margin-top:10px;
+}
+.itens-checkbox div{
+    margin-left: 10px;
+}
+.input-radio{
+    width: 24px;
+    background-color: #eee;
+    
+}
+.input-radio:hover{
+    cursor: pointer;
+
+}

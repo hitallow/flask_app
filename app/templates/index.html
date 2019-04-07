@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Modelo de apelação</title>
+    <!-- link para o bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- mateial icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- link para css próprio -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" />
+</head>
+
+<body>
+
+    <nav id="principal-navbar" class="navbar navbar-light" style="background-color: #468dc7c4;">
+        <div class='container'>
+            <a class="navbar-brand" href="#">Brand</a>
+
+            <ul class="icons-navbar">
+                <li><a class="btn btn-outline-danger" data-toggle="tooltip" data-placement="bottom"
+                        title="Ir para site da UFRN" target="blanck" href="https://www.ufrn.br"> <img
+                            src="{{ url_for('static',filename='imgs/ufrn.png')}}"></a> </li>
+                <li><a class="btn btn-outline-warning" data-toggle="tooltip" data-placement="bottom"
+                        title="Ir para site do ENAP" target="blanck" href="https://www.enap.gov.br/index.php/pt/"><img
+                            src="{{ url_for('static',filename='imgs/logo.png')}}"> </a></li>
+                <li> <a class="btn btn-outline-success" data-toggle="tooltip" data-placement="bottom"
+                        title="Ir para site da AGU" target="blanck" href="https://www.agu.gov.br"><img
+                            src="{{ url_for('static',filename='imgs/agu.png')}}"> </a></li>
+
+            </ul>
+
+        </div>
+        <!-- container navbar-->
+    </nav>
+    <!-- fim do navbar -->
+
+
+    <div class='container principal-container' id="principal">
+        <div class='col-md-12 jumbotron'>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 id="cabecalho" class="display-6">Insira os dados corretamente!</h3>
+                    <p class="lead">É interressante que todos os dados sejam
+                        preenchidos corretamente, informações ausentes podem
+                        causar um resultado inesperado.</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <!--linha-->
+            <form id="form-principal" method="POST" action="/index/testar">
+                <div class="row">
+                    <div class="col-md-2">
+                        Vara
+                    </div>
+                    <div class='col-md-9'>
+                        <select class="custom-select" name="vara">
+                            <option selected>Clique para abrir as opções</option>
+                            <option value="1º Vara federal">1º Vara federal</option>
+                            <option value="2º Vara federal">2º Vara federal</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Preencha este campo
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="material-icons" data-toggle="tooltip" data-placement="bottom"
+                            title="informações sobre este campo">
+                            info
+                        </i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Classe
+                    </div>
+                    <div class='col-md-9'>
+                        <select class="custom-select" name="classe">
+                            <option selected>Clique para abrir as opções</option>
+                            <option value="Mandado de segurança">Mandado de segurança</option>
+                            <option value="option2">Outro tipo de classe</option>
+                        </select>
+
+                        <div class="invalid-feedback">
+                            Preencha este campo
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="material-icons" data-toggle="tooltip" data-placement="bottom"
+                            title="informações sobre este campo">
+                            info
+                        </i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Reu
+                    </div>
+                    <div class='col-md-9'>
+                        <select class="custom-select" name="reu">
+                            <option selected>Clique para abrir as opções</option>
+                            <option value="Mandado de segurança">Universidade estadual do Rio Grande do Norte</option>
+                            <option value="option2">Outro réu quaisquer</option>
+                        </select>
+
+                        <div class="invalid-feedback">
+                            Preencha este campo
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="material-icons" data-toggle="tooltip" data-placement="bottom"
+                            title="informações sobre este campo">
+                            info
+                        </i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Magistrado
+                    </div>
+                    <div class='col-md-9'>
+                        <select class="custom-select" name="magistrado">
+                            <option selected>Clique para abrir as opções</option>
+                            <option value="Magnus Augusto Costa Delgado">Magnus Augusto Costa Delgado</option>
+                            <option value="option2">Outro magistrado quaisquer</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Preencha este campo
+                        </div>
+                    </div>
+
+                    <div class="col-md-1">
+                        <i class="material-icons" data-toggle="tooltip" data-placement="bottom"
+                            title="informações sobre este campo">
+                            info
+                        </i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2">
+                        Assunto
+                    </div>
+                    <div class='col-md-9'>
+                        <select class="custom-select" name="assunto">
+                            <option selected>Clique para abrir as opções</option>
+                            <option value="Redistribuições">Redistribuições</option>
+                            <option value="option2">Outro tipo de assunto</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Preencha este campo
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="material-icons" data-toggle="tooltip" data-placement="bottom"
+                            title="informações sobre este campo">
+                            info
+                        </i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <p>Tutela antecipada</p>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-row ">
+                            <div class="custom-control custom-radio" style="margin:5px;">
+                                <input value="sim" checked type="radio" id="tutela-antecipada-sim"
+                                    name='tutela-antecipada' class="custom-control-input">
+                                <label class="custom-control-label" for="tutela-antecipada-sim">Sim</label>
+                            </div>
+                            <div class="custom-control custom-radio" style="margin:5px;">
+                                <input type="radio" id="tutela-antecipada-nao" name='tutela-antecipada'
+                                    class="custom-control-input">
+                                <label value="não" class="custom-control-label" for="tutela-antecipada-nao">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="material-icons" data-toggle="tooltip" data-placement="bottom"
+                            title="informações sobre este campo">
+                            info
+                        </i>
+                    </div>
+                </div>
+
+            </form>
+            <!--final do formulario principal -->
+            <hr class="my-4">
+            <div>
+                <a id="test-data" class="btn btn-primary btn-sm" href="#" role="button">Fazer checagem</a>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                    <div id="load-spinner" class="col-md-12" style="display:none">
+                        <div  class="d-flex justify-content-center">
+                            <div class="spinner-border text-danger" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 id="resultOfModel">
+                        Preencha os dados, e clique pra checar os dados
+                    </h1>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- fim da container pai-->
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<!-- javascript personalizado-->
+<script src="{{ url_for('static', filename='javascript/main.js')}}"></script>
+
+</html>
