@@ -20,7 +20,7 @@ class Controller {
                 if (field.name == "tutela-antecipada") {
 
                     if (field.checked) data[field.name] = field.value;
-                } else if (field.value == "Clique para abrir as opções") {
+                } else if (field.value == "none") {
                     field.classList.remove("is-valid");
                     field.classList.add("is-invalid");
                     isValid = false;
@@ -47,7 +47,9 @@ class Controller {
         xhr.onload = (e) =>{
             if (xhr.readyState === 4 && xhr.status === 200) {
                 this.alterVisibleSpinner();
-                this.resultEl.innerHTML = xhr.responseText;
+                
+                console.log(xhr.responseText);
+                //this.resultEl.innerHTML = xhr.responseText;
 
             } else {
                 this.alterVisibleSpinner();
