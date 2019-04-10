@@ -49,10 +49,7 @@ class Controller {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 this.alterVisibleSpinner();
                 let response = JSON.parse(xhr.responseText);
-                console.log(response.output*100);
-                this.progressBarEl.style.width = response.output*100+'%'; 
-                this.progressBarEl.innerHTML = response.classe;
-
+                this.showProgressBar(response.classe, response.output);
                 //this.resultEl.innerHTML = xhr.responseText;
 
             } else {
@@ -62,6 +59,21 @@ class Controller {
         };
         xhr.send(JSON.stringify(data));
 
+    }
+    showProgressBar(classe , width ){
+        this.progressBarEl.classList = ["progress-bar" + " progress-bar-striped"];
+        
+        this.progressBarEl.style.display ='block';
+        if(classe == "PROVIDO"){
+            this.progressBarEl.classList.add("bg-success");
+        }else if(classe == "PARCIALMENTE PROVIDO"){
+            this.progressBarEl.classList.add("bg-info");
+        }else{
+            this.progressBarEl.classList.add("bg-danger");
+        }
+        this.progressBarEl.innerHTML = classe +" "+ Math.round(100*width)+'%';
+        this.progressBarEl.style.width = width*100+'%'; 
+        console.log('terminei');
     }
     alterVisibleSpinner() {
         if (this.spinnerEl.style.display == "none") {

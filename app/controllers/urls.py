@@ -26,9 +26,8 @@ def testar():
         """ 
 
         data = request.get_json()
-        print(data)
         values = []
-        [values.append(ord(random.choice(data[dado]))) for dado in data]
+        [ values.append(ord(random.choice(data[dado]))) for dado in data ]
         if( data["tutela-antecipada"] == 'sim'):
             output = abs(1-(sum(values)/5000))
         else:
@@ -42,6 +41,5 @@ def testar():
         
         
     except Exception as e:
-        print(e)
         return "Ocorreu um erro, tente novamente!"
     return result
