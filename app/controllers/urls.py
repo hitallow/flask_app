@@ -32,14 +32,12 @@ def testar():
         if( data["tutela-antecipada"] == 'sim'):
             output = abs(1-(sum(values)/5000))
         else:
-            output = abs(1-(sum(values)/10000))
-        print("out final:> ",output)
+            output = abs(1-(sum(values)/10000))   
         classes = ['PROVIDO', 'IMPROVIDO', 'PARCIALMENTE PROVIDO']
         response = {
             "output": output,
-            "class": random.choice(classes)
+            "classe": random.choice(classes)
         }
-
         return json.dumps(response)
         
         

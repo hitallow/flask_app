@@ -12,6 +12,7 @@
     margin-right: 10px;
       
 }
+
 .icons-navbar li a img{
     width: 30px;
     height: 30px;  
@@ -30,4 +31,11 @@
 .input-radio:hover{
     cursor: pointer;
 
+}
+.custom-progress{
+    height: 50px;
+    border-color: red;
+}
+.custom-progress div{
+    border-color: red!important;
 }

@@ -6,6 +6,7 @@ class Controller {
         this.formEl = document.querySelector("#form-principal");
         this.spinnerEl = document.querySelector('#load-spinner');
         this.resultEl = document.querySelector("#resultOfModel");
+        this.progressBarEl = document.querySelector("#progress-bar-result");
         $(function () { $('[data-toggle="tooltip"]').tooltip() });
         // iniciando evento
         this.init();
@@ -38,7 +39,7 @@ class Controller {
     sendJSON(data) {
 
         var xhr = new XMLHttpRequest();
-
+        
         xhr.open(this.formEl.method, this.formEl.action);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onloadstart = e => {
@@ -47,8 +48,11 @@ class Controller {
         xhr.onload = (e) =>{
             if (xhr.readyState === 4 && xhr.status === 200) {
                 this.alterVisibleSpinner();
-                
-                console.log(xhr.responseText);
+                let response = JSON.parse(xhr.responseText);
+                console.log(response.output*100);
+                this.progressBarEl.style.width = response.output*100+'%'; 
+                this.progressBarEl.innerHTML = response.classe;
+
                 //this.resultEl.innerHTML = xhr.responseText;
 
             } else {
@@ -66,5 +70,6 @@ class Controller {
             this.spinnerEl.style.display = "none"
         }
     }
+    
 }
 let control = new Controller();
