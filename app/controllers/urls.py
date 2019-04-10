@@ -27,7 +27,8 @@ def testar():
 
         data = request.get_json()
         values = []
-        [ values.append(ord(random.choice(data[dado]))) for dado in data ]
+        
+        [  values.append(ord(random.choice(data[dado])))  for dado in data if dado != "tutela-antecipada" ]
         if( data["tutela-antecipada"] == 'sim'):
             output = abs(1-(sum(values)/5000))
         else:

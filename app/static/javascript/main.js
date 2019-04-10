@@ -63,7 +63,7 @@ class Controller {
     showProgressBar(classe , width ){
         this.progressBarEl.classList = ["progress-bar" + " progress-bar-striped"];
         
-        this.progressBarEl.style.display ='block';
+        this.progressBarEl.style.display ='flex';
         if(classe == "PROVIDO"){
             this.progressBarEl.classList.add("bg-success");
         }else if(classe == "PARCIALMENTE PROVIDO"){

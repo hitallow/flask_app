@@ -1,4 +1,5 @@
 
+
 .icons-navbar{     
     display: flex;
     flex-direction: row;
@@ -34,8 +35,6 @@
 }
 .custom-progress{
     height: 50px;
-    border-color: red;
+        
 }
-.custom-progress div{
-    border-color: red!important;
-}
+
